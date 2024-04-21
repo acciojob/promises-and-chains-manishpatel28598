@@ -6,16 +6,14 @@ const age = document.getElementById("age");
 
 function validate(){
   return new Promise((resolve, reject)=>{
-    if(age.value>18){
       setTimeout(()=>{
-        resolve(`Welcome, ${name1.value} You can vote`);
+		  if(age.value>18){
+		        resolve(`Welcome, ${name1.value} You can vote`);
+		  }
+		  else{
+			   reject(`Oh sorry ${name1.value}. You aren't old enough.`);
+		  }
       },4000)
-    }
-    else{
-      setTimeout(()=>{
-        reject(`Oh sorry ${name1.value}. You aren't old enough.`);
-      })
-    }
   })
 }
 
